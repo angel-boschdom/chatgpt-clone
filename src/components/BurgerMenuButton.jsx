@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BurgerMenuIcon = () => {
+const BurgerMenuButton = ({ color = 'black' }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -27,7 +27,7 @@ const BurgerMenuIcon = () => {
           width: '28px',
           height: '3px',
           margin: '0 0 5px 0',
-          background: 'black',
+          background: color,
           transition: 'all 0.5s ease-out',
           transform: showMenu
             ? 'rotate(45deg) translate(5px, 5px)'
@@ -40,7 +40,7 @@ const BurgerMenuIcon = () => {
           width: '28px',
           height: '3px',
           margin: '0 0 5px 0',
-          background: 'black',
+          background: color,
           transition: 'all 0.5s ease-out',
           opacity: showMenu ? 0 : 1,
         }}
@@ -51,7 +51,7 @@ const BurgerMenuIcon = () => {
           width: '28px',
           height: '3px',
           margin: '0 0 5px 0',
-          background: 'black',
+          background: color,
           transition: 'all 0.5s ease-out',
           transform: showMenu
             ? 'rotate(-45deg) translate(7px, -6px)'
@@ -62,4 +62,4 @@ const BurgerMenuIcon = () => {
   );
 };
 
-export default BurgerMenuIcon;
+export default BurgerMenuButton;
