@@ -18,19 +18,21 @@ const ChatApp = () => {
   const navigationItems = ['Home', 'About Us', 'Contact Us', 'Sign In', 'Sign Up'];
   
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white">
+    <div className="flex h-screen bg-gray-900 text-white">
       <BurgerMenu navItems={navigationItems}/>
-      <ChatContainer>
-        {messages.map((msg, index) =>
-          msg.type === 'user' ? (
-            <UserMessage key={index} message={msg.text} />
-          ) : (
-            <AIMessage key={index} message={msg.message} codeBlocks={msg.codeBlocks} />
-          )
-        )}
-        <div ref={messagesEndRef} />
+      <div className="flex-1 flex flex-col">
+        <ChatContainer>
+          {messages.map((msg, index) =>
+            msg.type === 'user' ? (
+              <UserMessage key={index} message={msg.text} />
+            ) : (
+              <AIMessage key={index} message={msg.message} codeBlocks={msg.codeBlocks} />
+            )
+          )}
+          <div ref={messagesEndRef} />
+        </ChatContainer>
         <UserInputBox messages={messages} setMessages={setMessages} />
-      </ChatContainer>
+      </div>
     </div>
   );
 };

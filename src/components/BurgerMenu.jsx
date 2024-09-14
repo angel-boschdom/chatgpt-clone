@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import RightNavBar from './RightNavBar';
 
 const BurgerMenu = ({navItems}) => {
-  const [isOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative">
-      <RightNavBar navItems={navItems}/>
+    <div className="h-full">
+      <RightNavBar navItems={navItems} isOpen={isOpen} setIsOpen={setIsOpen}/>
     </div>
   );
 };
